@@ -4,6 +4,7 @@ class Collection_Menu {
    final String photo1 ;
    final String photo2 ;
    final String photo3 ;
+   bool isSelected_Collection =false;
 
   Collection_Menu({
     required this.NameCollection ,
