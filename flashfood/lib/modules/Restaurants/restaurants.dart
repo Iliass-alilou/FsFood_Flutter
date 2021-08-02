@@ -39,7 +39,7 @@ class _RestaurantsState extends State<Restaurants> {
     ),
     ModelRestaurant(
         photo: 'assets/images/burgerKing.png',
-        NameRestaurant : "McDonald's",
+        NameRestaurant : "Burger King",
         PrincipalDish : "Burger-poulet",
         rating : "96.3%",
         DeleveryPrice : "3Dhs",

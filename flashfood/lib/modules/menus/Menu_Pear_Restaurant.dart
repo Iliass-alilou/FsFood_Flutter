@@ -212,40 +212,47 @@ class _Menu_Pear_RestaurantState extends State<Menu_Pear_Restaurant> {
                  physics: NeverScrollableScrollPhysics(),
                  shrinkWrap: true,
                  itemBuilder: (context , index)  => collectionMenue[index].isSelected_Collection==true ?
-                SingleChildScrollView(
-                  child: Container(
-                    width: 400.0,
-                    child: Column(
-                      children: [
-                        Text(
-                          'MENUS - BBQ PARTY',
-                          style: TextStyle(
-                            color: Color(0xff090808),
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w400,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      collectionMenue[index].isSelected_Collection = false;
+                    });
+                  },
+                  child: SingleChildScrollView(
+                    child: Container(
+                      width: 400.0,
+                      child: Column(
+                        children: [
+                          Text(
+                            'MENUS - BBQ PARTY',
+                            style: TextStyle(
+                              color: Color(0xff090808),
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Container(
-                          width: 370.0,
-                          height: 1.5,
-                          color: Color(0xff000000),
-                        ),
-                        SizedBox(
-                          height: 40.0,
-                        ),
-                        ListView.separated(
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (context , index ) =>  MenueContainerToAdd(specific_menu[index]),
-                          separatorBuilder: (context , index) => SizedBox(
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Container(
+                            width: 370.0,
+                            height: 1.5,
+                            color: Color(0xff000000),
+                          ),
+                          SizedBox(
                             height: 40.0,
                           ),
-                          itemCount: specific_menu.length,
-                        ),
-                      ],
+                          ListView.separated(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (context , index ) =>  MenueContainerToAdd(specific_menu[index]),
+                            separatorBuilder: (context , index) => SizedBox(
+                              height: 40.0,
+                            ),
+                            itemCount: specific_menu.length,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ) :  // else
